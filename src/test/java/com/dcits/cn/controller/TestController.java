@@ -26,9 +26,9 @@ public class TestController {
         User user = testService.returnUser();
 
         if(user==null){
-            return "{\"code:1\",\"msg:成功\"}";
+            return "{\"code:1\",\"msg:失败\"}";
         }else{
-            return "{\"code:2\",\"msg:失败\"}";
+            return "{\"code:2\",\"msg:成功\"}";
         }
 
     }
