@@ -1,10 +1,16 @@
 package com.dcits.cn.controller;
 
+import com.dcits.cn.App;
 import com.dcits.cn.entity.User;
 import com.dcits.cn.service.TestService;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.Date;
 
 /**
  * @Description：
@@ -12,7 +18,8 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @Author:Mryu7
  * @Date:2022/9/2617:59
  */
-@SpringBootTest
+@SpringBootTest(classes = App.class)
+@RunWith(SpringRunner.class)
 public class TestController {
 
 
@@ -21,15 +28,19 @@ public class TestController {
 
 
     @Test
-    public String test1(){
+    public void test1(){
 
-        User user = testService.returnUser();
+        User user1 = testService.returnUser();
+//        System.out.println(user1);
+//
+//        User user = new User()
+//                .setId(1)
+//                .setDept("kaifa")
+//                .setName("zhangsan")
+//                .setCreateTime(new Date())
+//                .setUpdateTime(new Date());
 
-        if(user==null){
-            return "{\"code:1\",\"msg:失败\"}";
-        }else{
-            return "{\"code:2\",\"msg:成功\"}";
-        }
-
+        Assertions.assertNull(user1);
+//            Assertions.assertNotNull(user1);
     }
 }
