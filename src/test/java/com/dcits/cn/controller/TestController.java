@@ -34,5 +34,7 @@ public class TestController {
 
         Assertions.assertNull(user1);
 //            Assertions.assertNotNull(user1);
+
+        //test auto
     }
 }
