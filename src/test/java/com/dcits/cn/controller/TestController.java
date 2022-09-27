@@ -31,14 +31,6 @@ public class TestController {
     public void test1(){
 
         User user1 = testService.returnUser();
-//        System.out.println(user1);
-//
-//        User user = new User()
-//                .setId(1)
-//                .setDept("kaifa")
-//                .setName("zhangsan")
-//                .setCreateTime(new Date())
-//                .setUpdateTime(new Date());
 
         Assertions.assertNull(user1);
 //            Assertions.assertNotNull(user1);
